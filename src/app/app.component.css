@@ -1,0 +1,49 @@
+
+	 html{
+	  height: 100%;
+	}
+	body {
+	  height: 100%;
+	}
+	.dobrodosli{
+		 color:#7dc3e8;
+		 float:left;
+		 font-weight:bold;
+	}
+	
+
+/*etf slikica*/
+#etf-slikica{
+	padding-top:5px;
+	max-height:50px;
+}
+
+#navigacijaStablo{
+	float:left;
+	width:20%;
+	margin-top:20px;
+	margin-left:10px;
+}
+#glavniPregled{
+	float:left;
+	width:75%;
+	margin:0px;
+	margin-top:20px;
+}
+
+#spisakPredmeta{
+	margin-top: 15px;
+}
+
+.predmetIzSpiska{
+	float:left;
+	min-width:40px;
+	width:60px;
+}
+
+.color-red{
+	color:red;
+}
+
+
+

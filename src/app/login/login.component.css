@@ -1,0 +1,23 @@
+.loginPozadina{
+background: #232526;  
+background: -webkit-linear-gradient(to left, #414345, #232526);  
+background: linear-gradient(to left, #414345, #232526); 
+
+}
+.loginPozadina2{
+background: #000000;  
+background: -webkit-linear-gradient(to left, #434343, #000000); 
+background: linear-gradient(to left, #434343, #000000); 
+}
+	
+@media screen and (max-width: 767px) {
+    .loginPozadina{
+    	display: none;
+    }
+    #badge{
+    	margin:0;
+    }
+    #brand{
+    	display: none;
+    }
+}
