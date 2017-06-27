@@ -5,18 +5,15 @@ import { Router } from '@angular/router';
   template: ''
 })
 
-export class Pocetna{
+export class Pocetna implements OnInit{
 	constructor(private router: Router){}
 	ngOnInit(): void {
-		let id: number;
 		//skontati uslov
 		if(document.cookie.length<=15){
 			this.router.navigate(['/login']);
 		}
 		else{
-			//iz cookia ocitati podatak userid
-			//id=
-			this.router.navigate(['/pregled-predmeta', id]);
+			this.router.navigate(['/pregled-predmeta']);
 		}
 
 

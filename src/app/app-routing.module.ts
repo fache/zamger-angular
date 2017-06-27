@@ -11,7 +11,7 @@ import { Pocetna } from './pocetna/pocetna.component';
     	  { path:'login', component: LoginComponent },
     	  { path:'', component: Pocetna }, 
     	  { path:'pregled-predmeta', component: PregledPredmeta },
-    	  { path:'pregled-predmeta/:id', component: PregledPredmeta },
+    	 // { path:'pregled-predmeta/:id', component: PregledPredmeta },
      	  { path:'**', component: PageNotFoundComponent}
     ])
 	],

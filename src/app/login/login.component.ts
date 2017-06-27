@@ -20,29 +20,29 @@ export class LoginComponent implements OnInit{
     }
 
 	onSubmit(loginPodaci: any){
-		this.username=loginPodaci.uname;
-		this.password=loginPodaci.pass;
-	    this._loginService.postLogin(this.username, this.password)
-	    	.subscribe(resLoginData => 	{
-    			this.logApi = resLoginData;
-				if (this.logApi.success=='true'){ //??????????????????????????????????????????????????????
-					document.cookie = "sid="+this.logApi.sid;
-					document.cookie = "id="+this.logApi.userid;
-					console.log(document.cookie);//ispisuje ostatak cookia od =
-					//pozivanje API osoba i prosljedjivanje parametara
-					this.router.navigate(['/pregled-predmeta', this.logApi.userid]);
+		
+		if (document.cookie.length<=15){
+			this.username=loginPodaci.uname;
+			this.password=loginPodaci.pass;
+		    this._loginService.postLogin(this.username, this.password)
+		    	.subscribe(resLoginData => 	{
+					this.logApi = resLoginData;
+					if (this.logApi.success=='true'){ //??????????????????????????????????????????????????????
+						let kolacic = JSON.stringify({ "id": this.logApi.userid , "sid": this.logApi.sid});
+						//console.log("kolacic");
+						document.cookie = kolacic;
+						//document.cookie = "id="+this.logApi.userid;
+						//document.cookie = "sid="+this.logApi.sid;
+						
+						//pozivanje API osoba i prosljedjivanje parametara
+						this.router.navigate(['/pregled-predmeta']);
+					}
+					else{
+						this.greskaPrijave='Upisali ste pogrešne korisničke podatke';
+					}
 				}
-				else{
-					this.greskaPrijave='Unijeli ste pogrešne korisničke podatke';
-				}
-			}
-		);
+			);
+		}
 	}
-
 	
-	logOutCookie(){
-		document.cookie = "sid=";
-		console.log(document.cookie);
-		//redirect to /
-	}
 }

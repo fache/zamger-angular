@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { PregledPredmeta } from './pregledpredmeta/pregled-predmeta.component';
 import { Pocetna } from './pocetna/pocetna.component';
+import { Navigacija } from './navigacija/navigacija.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { Pocetna } from './pocetna/pocetna.component';
     LoginComponent,
     PregledPredmeta,
     Pocetna,
+    Navigacija,
     PageNotFoundComponent
   ],
   imports: [

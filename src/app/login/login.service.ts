@@ -14,13 +14,17 @@ export class LoginService {
  			.map((response: Response) => response.json())
  	}*/
  	postLogin(user:string, pass:string){
+  
+ 		console.log("LOG");
  		this.userFix=user;
  		this.passFix=pass;
  		let logpodaci ='login='+user+'&pass='+pass;
  		return this._http.post(this._url, logpodaci , {headers: this.headers})
    		 .map((response: Response) => response.json())
+
     /*  .toPromise()
       .then(res => res.json().data as Hero)
-      .catch(this.handleError);*/
+      .catch(this.handleError);
+      */
  	}
  }

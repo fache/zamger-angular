@@ -12,25 +12,30 @@
 
 <div class="container loginPozadina2" >
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="position: fixed;">
      <div id="brand">        
         <h2 style="color: white;">Elektrotehnički fakultet univerziteta u Sarajevu</h2>
         <!--<img src="../../assets/img/brand.svg" alt="PatternFly Enterprise Application">-->
-      </div>
+     </div>
     
     </div><!--/.col-*-->
+    
     <div class="col-sm-7 col-md-6 col-lg-5 login">
-      <form class="form-horizontal" role="form">
+        <form #loginform="ngForm" (ngSubmit)="onSubmit(loginform.value)" class="form-horizontal" role="form">
+        <div *ngIf="greskaPrijave" class="alert alert-warning" style="">
+          <span class="pficon pficon-warning-triangle-o"></span>
+          <strong>{{greskaPrijave}}</strong>
+        </div>
         <div class="form-group">
           <label for="inputUsername" class="col-sm-2 col-md-2 control-label" style="color: white;">Username</label>
           <div class="col-sm-10 col-md-10">
-            <input type="text" class="form-control" id="inputUsername" placeholder="" tabindex="1">
+            <input name="uname" ngModel required #uname="ngModel" type="text" class="form-control" id="inputUsername" placeholder="" tabindex="1">
           </div>
         </div>
         <div class="form-group">
           <label for="inputPassword" class="col-sm-2 col-md-2 control-label" style="color: white;">Password</label>
           <div class="col-sm-10 col-md-10">
-            <input type="password" class="form-control" id="inputPassword" placeholder="" tabindex="2">
+            <input name="pass" ngModel required #pass="ngModel" type="password" class="form-control" id="inputPassword" placeholder="" tabindex="2">
           </div>
         </div>
         <div class="form-group">
@@ -50,6 +55,7 @@
     </div><!--/.col-*-->
     <div class="col-sm-5 col-md-6 col-lg-7 details">
       <p style="color: white;"><strong>Dobro došli na bolognaware Elektrotehničkog fakulteta Sarajevo</strong><br><br><br></p>
+      <p *ngIf="greskaPrijave"><br><br><br></p>
       <a href="#">Preuzmite uputstva za nastavnike</a>
     </div><!--/.col-*-->
   </div><!--/.row-->
