@@ -6,7 +6,7 @@ import { Headers, Http } from '@angular/http';
 import { Sesija } from '../sesija';
 import 'rxjs/add/operator/toPromise';
 @Component({
-	selector: 'nav',
+	selector: 'navigacija',
   	templateUrl: './navigacija.component.html'
 })
 
@@ -22,7 +22,7 @@ export class Navigacija implements OnInit{
 	logOutCookie(){
 		document.cookie = "";
 		console.log(document.cookie);
-		this.router.navigate(['/login']);
+		//this.router.navigate(['/login']);
 		//redirect to /
 	}
 }
