@@ -9,14 +9,13 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/">
-      <img src="//assets/img/brand.svg" alt="PatternFly Enterprise Application" />
-    </a>
+    <!--prostor za slikicu-->
+    <h3 class="dobrodosli">Dobrodošli, {{this.ime}}</h3>
   </div>
   <div class="collapse navbar-collapse navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-utility">
-      <li>
-        <a href="#">Status</a>
+    <ul class="nav navbar-nav navbar-utility" style="padding-top:10px;">
+      <li>     	
+        <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Poruke[{{this.poruke}}]</a>
       </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -25,13 +24,8 @@
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="#" (click)="logOutCookie()">Odjava</a>
-          </li>
-          <li>
-            <a href="#">Another link</a>
-          </li>
-          <li>
-            <a href="#">Something else here</a>
+            <a href="#">Prijavite se kao...</a>
+            <!-- TODO modal -->
           </li>
           <li class="divider"></li>
           <li class="dropdown-submenu">
@@ -59,7 +53,7 @@
           </li>
           <li class="divider"></li>
           <li>
-            <a href="#">One more separated link</a>
+          	<a routerLink="/login" routerLinkActive="active" (click)="logOutCookie()">Odjava</a>
           </li>
         </ul>
       </li>
@@ -83,3 +77,4 @@ $('[data-toggle="tooltip"]').tooltip();
 $().setupVerticalNavigation(true);
 });
 </script>
+

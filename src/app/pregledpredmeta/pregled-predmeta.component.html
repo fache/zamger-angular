@@ -1,3 +1,72 @@
 <navigacija></navigacija>
 <p>Ovdje cemo prikazati sve predmete za nastavnika sa id:{{id}} i sid:{{sid}} </p>
-<nav></nav>
+
+
+
+
+
+
+
+<div style="width: 20%; float:left;">
+Prostor za stablo
+</div>
+
+
+
+<div id="spisakPredmeta" style="width: 79%; float:left;">
+  <div class="panel-group" id="accordion-markup" style="width:100%">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a data-toggle="collapse" data-parent="#accordion-markup" href="#collapseOne" class="collapsed">
+	        Pogledajte svoj raspored časova
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseOne" class="panel-collapse collapse">
+	      <div class="panel-body">
+		  
+	        <!-- raspored -->
+
+	      </div>
+	    </div>
+	  </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Naziv <span class="color-red">[EDIT]</span></th>
+          <th>Osoblje</th>
+          <th>Studenti <span class="color-red">[+/-]</span></th>
+          <th>Grupe</th>
+          <th>AG</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><a href="podstranice/opcijepredmeta.php">Objektno orijentisana analiza i dizajn</a></td>
+          <td>5</td>
+          <td><a href="podstranice/grupesve.php">112</a></td>
+          <td>3</td>
+          <td>2016/2017</td>
+        </tr>
+        <tr>
+          <td>{{this.idPredmeta}}</td>
+          <td><a href="podstranice/opcijepredmeta.php">Objektno orijentisana analiza i dizajn</a></td>
+          <td>5</td>
+          <td><a href="podstranice/grupesve.php">112</a></td>
+          <td>3</td>
+          <td>2016/2017</td>
+        </tr>
+        <tr>
+          <td colspan="6"><a>Prikaži ranije akademske godine</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

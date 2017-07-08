@@ -5,6 +5,8 @@ import { Sesija } from '../sesija';
 import { ActivatedRoute } from '@angular/router';
 import { LoginService } from '../login/login.service';
 import { Navigacija } from '../navigacija/navigacija.component';
+import { PredmetiNastavnikaService } from '../servisi/predmetiNastavnika.service';
+import { Predmeti } from '../predmeti';
 @Component({
   templateUrl: './pregled-predmeta.component.html'
 })
@@ -12,7 +14,12 @@ import { Navigacija } from '../navigacija/navigacija.component';
 export class PregledPredmeta implements OnInit{
 	id:string;
 	sid:string;
-	constructor(private router: Router){}
+
+	idPredmeta:string="55";
+	predmetiString:string;
+
+
+	constructor(private _predmetiNastavnikaService: PredmetiNastavnikaService, private router: Router){}
 	ngOnInit(): void {
 		if(document.cookie.length<=15){
 			this.router.navigate(['/login']);
@@ -22,7 +29,27 @@ export class PregledPredmeta implements OnInit{
 			let kolacic = JSON.parse(document.cookie);
 			this.id =kolacic.id;
 			this.sid = kolacic.sid;
-			//console.log(kolacic);
+
+			
+			
+			this._predmetiNastavnikaService.getPredmeti().subscribe(resLoginDataa => 	{
+				this.predmetiString = JSON.stringify(resLoginDataa);
+			
+				console.log(this.predmetiString);
+				
+				if(JSON.parse(this.predmetiString).success=="true"){
+					//this.idPredmeta=JSON.parse(this.predmetiString).data.predmeti[0].id;	
+					
+
+					console.log("testna");
+				}
+				else{
+					console.log("Greska predmeti: "+JSON.parse(this.predmetiString).message);
+				}
+								
+				}
+			);
+
 		}
 	}
 	

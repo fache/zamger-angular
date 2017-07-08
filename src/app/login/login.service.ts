@@ -7,6 +7,7 @@ export class LoginService {
 	userFix:string;
 	passFix:string;
 	private _url: string = "https://zamger.etf.unsa.ba/auth.php";
+	//private _url: string = "http://localhost/ll/auth.php";
  	private headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
  	constructor(private _http: Http){}
  	/*getLogin(){

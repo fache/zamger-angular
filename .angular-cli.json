@@ -43,7 +43,6 @@
         "../node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js",
         "../node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"
 
-
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
